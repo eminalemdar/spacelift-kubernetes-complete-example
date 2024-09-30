@@ -30,7 +30,7 @@ resource "spacelift_environment_variable" "vpc_cidr" {
 resource "spacelift_environment_variable" "public_subnets" {
   context_id  = spacelift_context.k8s-stack.id
   name        = "TF_VAR_public_subnets"
-  value       = "["10.0.3.0/24", "10.0.4.0/24", "10.0.5.0/24"]"
+  value       = "[\"10.0.3.0/24\", \"10.0.4.0/24\", \"10.0.5.0/24\"]"
   write_only  = false
   description = "CIDR blocks for the public subnets"
 }
@@ -38,7 +38,7 @@ resource "spacelift_environment_variable" "public_subnets" {
 resource "spacelift_environment_variable" "private_subnets" {
   context_id  = spacelift_context.k8s-stack.id
   name        = "TF_VAR_private_subnets"
-  value       = "["10.0.0.0/24", "10.0.1.0/24", "10.0.2.0/24"]"
+  value       = "[\"10.0.0.0/24\", \"10.0.1.0/24\", \"10.0.2.0/24\"]"
   write_only  = false
   description = "CIDR blocks for the private subnets"
 }
