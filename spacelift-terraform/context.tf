@@ -61,49 +61,6 @@ resource "spacelift_environment_variable" "cluster_version" {
   description = "Version of the EKS cluster"
 }
 
-resource "spacelift_environment_variable" "node_group_name" {
-  context_id  = spacelift_context.k8s-stack.id
-  name        = "TF_VAR_node_group_name"
-  value       = "eks-node-group"
-  write_only  = false
-  description = "Name of the EKS node group"
-}
-
-resource "spacelift_environment_variable" "node_group_instance_type" {
-  context_id  = spacelift_context.k8s-stack.id
-  name        = "TF_VAR_node_group_instance_type"
-  value       = "t3.medium"
-  write_only  = false
-  description = "Instance type of the EKS node group"
-}
-
-resource "spacelift_environment_variable" "node_group_desired_capacity" {
-  context_id  = spacelift_context.k8s-stack.id
-  name        = "TF_VAR_node_group_desired_capacity"
-  value       = "2"
-  write_only  = false
-  description = "Desired capacity of the EKS node group"
-}
-
-resource "spacelift_environment_variable" "node_group_max_capacity" {
-  context_id  = spacelift_context.k8s-stack.id
-  name        = "TF_VAR_node_group_max_capacity"
-  value       = "3"
-  write_only  = false
-  description = "Maximum capacity of the EKS node group"
-}
-
-resource "spacelift_environment_variable" "node_group_min_capacity" {
-  context_id  = spacelift_context.k8s-stack.id
-  name        = "TF_VAR_node_group_min_capacity"
-  value       = "1"
-  write_only  = false
-  description = "Minimum capacity of the EKS node group"
-}
-
-
-
-
 resource "spacelift_context_attachment" "attachment" {
   context_id = spacelift_context.k8s-stack.id
   stack_id   = spacelift_stack.eks-stack.id
