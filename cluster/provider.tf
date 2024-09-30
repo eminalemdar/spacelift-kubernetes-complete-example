@@ -20,7 +20,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region
+  region = var.aws_region
 }
 
 # Required for public ECR where Karpenter artifacts are hosted
