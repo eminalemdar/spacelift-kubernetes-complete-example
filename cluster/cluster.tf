@@ -75,14 +75,6 @@ module "auth" {
       ]
     },
   ]
-  # You can optionally add IAM users to the aws-auth ConfigMap
-  aws_auth_users = [
-    {
-      userarn  = data.aws_caller_identity.current.arn
-      username = data.aws_caller_identity.current.user_id
-      groups   = ["system:masters"]
-    }
-  ]
 }
 
 #---------------------------------------------------------------
